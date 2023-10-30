@@ -1,0 +1,87 @@
+<style>
+body, h1, p, h2 {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  background-color: #FF5733;
+  color: #fff;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+header h2 {
+  font-size: 24px;
+}
+
+header a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #FF914D;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+header img {
+  display: block;
+  margin: 20px auto;
+  width: 100px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+section {
+  text-align: left;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-family: Brush Script MT;
+  font-size: 90px;
+  color: #33FFF6;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.recipe-title {
+  font-size: 36px;
+  margin-top: 20px;
+  color: #FF5733;
+}
+
+.recipe-image {
+  width: 400px;
+}
+
+.recipe-description {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #FF5733;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  clear: both;
+}
+</style>
