@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes - SnapSavor</title>
+  <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+  <header>
+    <h2>Join our Foodie Community!</h2>
+    <a href="home.html">Home</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="dining.html">Dining Hotspots</a>
+    <a href="community.html">Community Forum</a>
+    <div id="profile-section">
+      <img src="profile.png" alt="Profile Image">
+      <p id="login-link">Profile <span id="username-display"></span></p>
+    </div>
+    <h1>SnapSavor</h1>
+    <p>Your culinary journey begins here.</p>
+    <input type="text" placeholder="Search for recipes">
+  </header>
+
+  <section>
+    <h2>Popular Recipes...</h2>
+    <div class="recipe-card">
+      <a href="recipe1.html">
+        <img class="recipe-image" src="recipe1.jpg" alt="Recipe 1">
+        <p>Filipino Pork Adobo</p>
+      </a>
+    </div>
+    <div class="recipe-card">
+      <a href="recipe2.html">
+        <img class="recipe-image" src="recipe2.jpg" alt="Recipe 2">
+        <p>Pancit</p>
+      </a>
+    </div>
+    <div class="recipe-card">
+      <a href="recipe3.html">
+        <img class="recipe-image" src="recipe3.jpg" alt="Recipe 3">
+        <p>Filipino Pork Menudo</p>
+      </a>
+    </div>
+    <div class="recipe-card">
+      <a href="recipe4.html">
+        <img class="recipe-image" src="recipe4.jpg" alt="Recipe 4">
+        <p>Pork Sisig</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 SnapSavor</p>
+    <ul id="navlist">
+      <li id="facebook"><a href="https://www.facebook.com/profile.php?id=100073641940384"></a></li>
+      <li id="pinterest"><a href="https://www.pinterest.ph/fakebarackobama/"></a></li>
+    </ul>
+  </footer>
+
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="button" onclick="performLogin()">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="home.js"></script>
+</body>
+</html>
