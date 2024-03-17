@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Challenge 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modified FLAMES</h1>
+
+    <input type="text" id="name1" placeholder="Enter first name"><br>
+    <input type="text" id="name2" placeholder="Enter second name"><br>
+    <button onclick="flames()">Match Names</button>
+    <h3 id="displayNames"></h3>
+
+    <h4>FLAMES Result:</h4>
+    <h3 id="result"></h3>
+
+    <script>
+        function flames() {
+            var name1 = document.getElementById("name1").value;
+            var name2 = document.getElementById("name2").value;
+
+            // Display names
+            document.getElementById("displayNames").innerHTML = "Names: " + name1 + " and " + name2;
+
+            // Remove spaces and special characters and calculate total characters
+            var totalCharacters = (name1.replace(/\s+/g, '').replace(/[^A-Za-z]/g, '').length +
+                                   name2.replace(/\s+/g, '').replace(/[^A-Za-z]/g, '').length);
+
+            // Calculate FLAMES index
+            var flamesIndex = totalCharacters % 6;
+
+            // Define FLAMES characters
+            var flamesChars = ['F', 'L', 'A', 'M', 'E', 'S'];
+
+            // Map FLAMES index to result
+            var resultText = "";
+            switch(flamesChars[flamesIndex]) {
+                case 'F':
+                    resultText = "Friends";
+                    break;
+                case 'L':
+                    resultText = "Lovers";
+                    break;
+                case 'A':
+                    resultText = "Acquaintances";
+                    break;
+                case 'M':
+                    resultText = "Marriage";
+                    break;
+                case 'E':
+                    resultText = "Enemies";
+                    break;
+                case 'S':
+                    resultText = "Sweethearts";
+                    break;
+                default:
+                    resultText = "Error";
+                    break;
+            }
+
+            // Display result
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>
