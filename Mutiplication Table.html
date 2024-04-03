@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiplication Table</title>
+<style>
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<h2>Multiplication Table</h2>
+
+<script>
+function generateMultiplicationTable() {
+    let n = parseInt(prompt("Enter the number of columns (2-10):"));
+    let m = parseInt(prompt("Enter the number of rows (2-10):"));
+
+    if (isNaN(n) || isNaN(m) || n < 2 || n > 10 || m < 2 || m > 10) {
+        alert("Please enter valid numbers between 2 and 10.");
+        return;
+    }
+
+    let table = "<table>";
+    for (let i = 1; i <= n; i++) {
+        table += "<tr>";
+        for (let j = 1; j <= m; j++) {
+            table += "<td>" + (i * j) + "</td>";
+        }
+        table += "</tr>";
+    }
+    table += "</table>";
+
+    document.body.innerHTML += table;
+}
+
+generateMultiplicationTable();
+</script>
+</body>
+</html>
