@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+<title>Learning Website Sign-up</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    form {
+        width: 50%;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+    legend {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+        border-color: #4CAF50;
+    }
+    input:invalid, select:invalid, textarea:invalid {
+        border-color: #f44336;
+    }
+    input[type="submit"], input[type="reset"] {
+        width: auto;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover, input[type="reset"]:hover {
+        background-color: #45a049;
+    }
+    #output {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<form id="signupForm">
+    <fieldset>
+        <legend>Sign Up</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required onblur="validateInput(this)" onfocus="resetValidation(this)">
+        
+        <label for="username">Preferred Username:</label>
+        <input type="text" id="username" required onblur="validateInput(this)" onfocus="resetValidation(this)">
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" required onblur="validateInput(this)" onfocus="resetValidation(this)">
+            <option value="" disabled selected>Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="prefer not to mention">Prefer not to mention</option>
+        </select>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" required onblur="validateInput(this)" onfocus="resetValidation(this)">
+        
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" required onblur="validateInput(this)" onfocus="resetValidation(this)">
+        
+        <label for="address">Address:</label>
+        <textarea id="address" rows="4" required onblur="validateInput(this)" onfocus="resetValidation(this)"></textarea>
+        
+        <label for="interest">Interests:</label>
+        <textarea id="interest" rows="4" required onblur="validateInput(this)" onfocus="resetValidation(this)"></textarea>
+    </fieldset>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+
+<div id="output"></div>
+
+<script>
+    function validateInput(element) {
+        if (!element.value.trim()) {
+            element.style.borderColor = "#f44336";
+        } else {
+            element.style.borderColor = "#4CAF50"; 
+        }
+    }
+
+    function resetValidation(element) {
+        element.style.borderColor = "";
+    }
+
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = "";
+
+        var formData = new FormData(this);
+        var outputText = "<h2>Sign-Up Details</h2>";
+        formData.forEach(function(value, key) {
+            outputText += "<p><strong>" + key.charAt(0).toUpperCase() + key.slice(1) + ":</strong> " + value + "</p>";
+        });
+        outputDiv.innerHTML = outputText;
+    });
+
+    document.getElementById("signupForm").addEventListener("reset", function() {
+        document.getElementById("output").innerHTML = "";
+    });
+</script>
+
+</body>
+</html>
